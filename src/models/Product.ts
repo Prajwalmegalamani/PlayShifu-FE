@@ -4,6 +4,7 @@ export interface IProduct {
   description: string;
   regularPrice: number;
   salePrice?: number;
+  price: number;
   imageUrl: string;
   ageRange: string[];
   categories: string[];

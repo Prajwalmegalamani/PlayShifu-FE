@@ -1,7 +1,4 @@
 "use client";
-
-import { useState } from "react";
-import { getProducts, getFeaturedProducts } from "@/lib/api";
 import {
   AwardIcon,
   Truck,
@@ -11,7 +8,6 @@ import {
 } from "lucide-react";
 import Faq1 from "../../public/images/faq1.png";
 import Faq2 from "../../public/images/faq2.png";
-import NewFooter from "@/components/layout/Footer";
 import Tiles from "@/components/layout/Tiles";
 import HeroHeader from "@/components/layout/HeroHeader";
 import Image from "next/image";
@@ -19,30 +15,8 @@ import ShowCase from "@/components/layout/ShowCase";
 import Reviews from "@/components/layout/Reviews";
 import Collections from "@/components/layout/Collections";
 import { IProduct } from "@/components/ui/product-card";
-// This is a Client Component that uses Server Components
+
 export default function Home() {
-  const featuredProducts = getFeaturedProducts();
-
-  const [selectedAgeRange, setSelectedAgeRange] = useState("0-4");
-  const [selectedCategory, setSelectedCategory] = useState("problem-solving");
-
-  const ageRanges = [
-    { id: "0-4", label: "0-4 yrs" },
-    { id: "4-6", label: "4-6 yrs" },
-    { id: "6-8", label: "6-8 yrs" },
-    { id: "8-10", label: "8-10 yrs" },
-    { id: "10+", label: "10+ yrs" },
-  ];
-
-  const categories = [
-    { id: "problem-solving", label: "Problem solving" },
-    { id: "geography", label: "Geography" },
-    { id: "coding", label: "Coding" },
-    { id: "stem", label: "STEM" },
-    { id: "packs-combos", label: "Packs and Combos" },
-    { id: "language-numbers", label: "Language and Numbers" },
-  ];
-
   const popularProducts = [
     {
       id: "1",

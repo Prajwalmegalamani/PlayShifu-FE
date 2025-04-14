@@ -4,15 +4,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Book,
-  Map,
-  Code,
-  GraduationCap,
-  ShoppingCart,
-  Percent,
-  HelpCircle,
-} from "lucide-react";
+import { Book, Map, ShoppingCart, Percent, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 

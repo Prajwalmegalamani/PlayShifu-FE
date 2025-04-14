@@ -55,12 +55,11 @@ export default function Collections({
       )}
       <div className="w-full flex items-center gap-5 justify-around overflow-x-auto">
         {products.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
       </div>
       {showArrows && (
         <div className="absolute top-0 left-0 z-[100] bg-red-500">
-
           <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
             <ArrowLeft className="w-5 h-5 text-white" />
           </div>

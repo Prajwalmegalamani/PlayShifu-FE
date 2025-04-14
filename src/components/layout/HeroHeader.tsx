@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import HeroHeaderImage from "../../../public/images/hero-header.jpg";
 import Image from "next/image";
@@ -5,9 +7,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-  CarouselApi,
 } from "@/components/ui/carousel";
 
 export default function HeroHeader() {

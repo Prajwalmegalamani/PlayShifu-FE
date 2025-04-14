@@ -7,9 +7,7 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-  CarouselApi,
 } from "@/components/ui/carousel";
-import Image from "next/image";
 
 const showCase = [
   {
@@ -39,7 +37,7 @@ const showCase = [
 ];
 
 export default function ShowCase() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide] = useState(0);
   const slides = [
     {
       id: 1,

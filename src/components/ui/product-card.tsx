@@ -9,8 +9,7 @@ export interface IProduct {
   _id: string;
   name: string;
   description: string;
-  price: number;
-  discountPercentage: number;
+  discountPercentage: number | undefined;
   imageUrl: string;
   isOnSale: boolean;
   rating: number;
@@ -19,11 +18,7 @@ export interface IProduct {
   regularPrice: number;
 }
 
-export interface ProductCardProps {
-  product: IProduct;
-}
-
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product }: { product: IProduct }) {
   return (
     <Card className="overflow-hidden transition-all hover:shadow-md w-full flex justify-start items-start flex-col">
       <Link href={`/product/${product._id}`} className="block relative h-48">

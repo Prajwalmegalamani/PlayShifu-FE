@@ -1,29 +1,15 @@
 "use client";
 
 import { useProducts } from "@/hooks/useApi";
-import ProductCard from "@/components/ui/product-card";
 import { IProduct } from "@/models/Product";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface ProductGridProps {
   initialProducts?: IProduct[];
-  category?: string;
-  ageRange?: string;
 }
 
-export default function ProductGrid({
-  initialProducts,
-  category,
-  ageRange,
-}: ProductGridProps) {
-  const {
-    data: products,
-    isLoading,
-    error,
-  } = useProducts({
-    category,
-    ageRange,
-  });
+export default function ProductGrid({ initialProducts }: ProductGridProps) {
+  const { data: products, isLoading, error } = useProducts();
 
   // Use initial data if available and not loading new data
   const displayProducts = !isLoading && products ? products : initialProducts;
@@ -55,7 +41,14 @@ export default function ProductGrid({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {displayProducts.map((product) => (
-        <ProductCard key={product._id} product={product} />
+        <div key={product._id}>
+          <h1>{product.name}</h1>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
+          <p>{product.discountPercentage}</p>
+          <p>{product.isOnSale}</p>
+        </div>
+        // <ProductCard key={product._id} product={product} />
       ))}
     </div>
   );

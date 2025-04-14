@@ -12,10 +12,10 @@ import {
 } from "lucide-react";
 
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-const tempFooterUrls = [
+const footerUrls = [
   {
     name: "Shop by category",
     url_links: [
@@ -103,7 +103,7 @@ const tempFooterUrls = [
 ];
 
 export default function NewFooter() {
-  const [footerUrls, setFooterUrls] = useState(tempFooterUrls);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <div className="flex flex-col lg:justify-center justify-center px-10 gap-[23px] lg:gap-0 align-middle items-center lg:items-center w-full h-full">
@@ -157,9 +157,6 @@ export default function NewFooter() {
               {footerUrls &&
                 footerUrls.map((footer_url, index) => {
                   const reorderedFooterUrl = footer_url;
-
-                  // State for toggling dropdown on mobile
-                  const [isDropdownOpen, setDropdownOpen] = useState(false);
 
                   return (
                     <div

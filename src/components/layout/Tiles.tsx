@@ -1,5 +1,6 @@
+"use client";
 import useMediaQuery from "@/hooks/useMediaQuery";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export default function Tiles({
   title,
